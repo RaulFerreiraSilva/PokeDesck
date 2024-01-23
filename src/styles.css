@@ -1,0 +1,19 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+:root{
+    --color-Primary: #29738e;
+    --color-Secondary: #7f6f62;
+    --color-Primary-opacity: #5f96aa;
+    --color-Secondary-opacity: #cec1b8;
+}
+
+body{
+    background: var(--color-Secondary-opacity);
+    background: radial-gradient(circle, var(--color-Secondary-opacity) 32%, var(--color-Primary-opacity) 48%, var(--color-Primary) 79%);
+    height: 100vh;
+}

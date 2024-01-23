@@ -1,0 +1,18 @@
+<ng-container>
+    <header>
+        <input type="text" [(ngModel)]="pokeName" (blur)="searchPokemon()" (keyup.enter)="searchPokemon()">
+    </header>
+    <section class="container">
+        <div *ngFor="let pokemon of pokemons" (click)="selectPokemon(pokemon)">
+            <h2>{{pokemon?.name}}</h2>
+            <img src="{{pokemon?.img}}" alt="Pokemon">
+        </div>
+    </section>
+    <footer>
+        <button (click)="prevPage()" [disabled]="currentPage === 1">Prev</button>
+        <span>
+            <button  *ngFor="let page of getPageNumbers()" (click)="goToPage(page)" #targetElement [class.active]="currentPage === page">{{ page }}</button>
+        </span>
+        <button (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+    </footer>
+</ng-container>
